@@ -40,7 +40,7 @@ const App = () => {
     }
 
     axios
-    .post(`https://backend-60021a3866e6c44bc5a2c1af.c.6001421cc73ea88e8147c139.cycle.io:3000/user`, newUser)
+    .post(`backend-60021a3866e6c44bc5a2c1af.c.6001421cc73ea88e8147c139.cycle.io:3000/user`, newUser)
     .then(res => {
       console.log('User Added', res)
     })
@@ -61,7 +61,7 @@ const App = () => {
 
   useEffect(() => {
     axios
-    .get('https://backend-60021a3866e6c44bc5a2c1af.c.6001421cc73ea88e8147c139.cycle.io:3000/user')
+    .get('backend-60021a3866e6c44bc5a2c1af.c.6001421cc73ea88e8147c139.cycle.io:3000/user')
     .then(res => {
       console.log(res.data.message)
       setInfo(res.data.message)
