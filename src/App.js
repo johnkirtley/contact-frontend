@@ -57,8 +57,6 @@ const App = () => {
     
   }
 
-  console.log(info)
-
   useEffect(() => {
     axios
     .get('https://docker-test-john.herokuapp.com/user')
