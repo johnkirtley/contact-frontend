@@ -12,15 +12,14 @@ RUN npm install --silent
 COPY . ./
 # build app
 RUN npm run build
-CMD [ "npm", "start" ]
 
-# # STAGE 2
-# # pull official image
-# FROM nginx:1.19.0-alpine
-# # copy files to nginx
-# COPY --from=builder /app/build /usr/share/nginx/html
-# COPY --from=builder /app/nginx/nginx.conf /etc/nginx/conf.d/default.conf
-# # expose port
-# EXPOSE 80
-# # start nginx
-# CMD ["nginx", "-g", "daemon off;"]
+# STAGE 2
+# pull official image
+FROM nginx:1.19.0-alpine
+# copy files to nginx
+COPY --from=builder /app/build /usr/share/nginx/html
+COPY --from=builder /app/nginx/nginx.conf /etc/nginx/conf.d/default.conf
+# expose port
+EXPOSE 80
+# start nginx
+CMD ["nginx", "-g", "daemon off;"]
