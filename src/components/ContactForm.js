@@ -30,7 +30,7 @@ const ContactForm = (props) => {
         
         // Adds contact to list
         axios
-        .post(`https://docker-test-john.herokuapp.com/user`, newUser)
+        .post(`http://backend-6004ac4dd7e5da3a35dc04a0.c.6001421cc73ea88e8147c139.cycle.io/user`, newUser)
         .then(res => {
           console.log('User Added', res)
         })
