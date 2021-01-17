@@ -3,7 +3,7 @@ import {Button, Form, FormGroup, Label, Input } from 'reactstrap'
 
 const ContactForm = (props) => {
 
-    // sets input values
+    // sets form input values
     const handleChange = (e) => {
         props.setUser({
           ...props.user,
@@ -56,7 +56,7 @@ const ContactForm = (props) => {
           </FormGroup>
           <FormGroup>
             <Label for="phone">Phone Number</Label>
-            <Input placeholder="xxx-xxx-xxxx" type="tel" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required value={props.user.phone} onChange={handleChange}/>
+            <Input placeholder="xxx-xxx-xxxx" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required value={props.user.phone} onChange={handleChange}/>
           </FormGroup>
           <Button>Add Contact</Button>
         </Form>
